@@ -1,6 +1,6 @@
 # java_script
 
-Projekt -> Todo Liste
+**Projekt -> Todo Liste**
 
 -> Neue Liste 
 
