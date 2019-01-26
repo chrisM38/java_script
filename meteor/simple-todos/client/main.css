@@ -16,7 +16,7 @@ body {
   font-size: 14px;
 }
 
-.container {
+.todoContainer {
   max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
