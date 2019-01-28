@@ -39,7 +39,7 @@ function showCalendar(month, year) {
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
 
-    let tbl = document.getElementsByClassName("calendar-body");
+    let tbl = document.getElementsByClassName("days");
 
     tbl[0].innerHTML = "";
 
