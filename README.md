@@ -10,7 +10,7 @@
 
 -> Aufgabe als erledigt markiert
 
--> Augafe löschen
+-> Augabe löschen
 
 -> Aufgabe bearbeitern
 
