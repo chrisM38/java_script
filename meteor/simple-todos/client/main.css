@@ -182,12 +182,23 @@ tr.weekdays{
 
 }
 
-/* Previous button inside month header */
+td {
+  position: relative;
+}
+
+input.calendarSelect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: inherit;
+  opacity: 0;
+}
+
 .prev {
   float: left;
 }
 
-/* Next button */
 .next {
   float: right;
 }

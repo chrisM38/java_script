@@ -25,7 +25,14 @@ Template.calendar.events({
         currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
         currentMonth = (currentMonth + 1) % 12;
         showCalendar(currentMonth, currentYear);
-    }
+    },
+    'change .calendarSelect'(event) {
+        if($(event.target).is(":checked")){
+            $(event.target.parentNode).css('background-color', 'white');
+        }else {
+            $(event.target.parentNode).css('background-color', 'red');
+        }
+    },
 });
 
 Template.calendar.onRendered(function () {
@@ -51,6 +58,10 @@ function showCalendar(month, year) {
                 break;
             } else {
                 let cell = document.createElement("td");
+                let input = document.createElement("input");
+                input.setAttribute("type", "checkbox");
+                input.setAttribute("class", "calendarSelect");
+                cell.appendChild(input);
                 cell.appendChild(document.createTextNode(date));
                 row.appendChild(cell);
                 date++;
