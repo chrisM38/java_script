@@ -4,6 +4,7 @@ import './calendar.html';
 import './body.html';
 
 import {months, checkedDate, today} from '../api/dates.js';
+import {getTasks} from "./body";
 var currentMonth = today.getMonth();
 var currentYear = today.getFullYear();
 
@@ -21,14 +22,19 @@ Template.calendar.events({
     'click .prev'() {
         currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
         currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+        document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
+        document.getElementsByClassName("year")[0].innerHTML = getYear();
         checkedDate = [];
-        Template.instance().setYear;
+        //getTasks();
         showCalendar(currentMonth, currentYear);
     },
     'click .next'() {
         currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
         currentMonth = (currentMonth + 1) % 12;
+        document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
+        document.getElementsByClassName("year")[0].innerHTML = getYear();
         checkedDate = [];
+        //getTasks();
         showCalendar(currentMonth, currentYear);
     },
     'change .calendarSelect'(event) {
@@ -39,7 +45,6 @@ Template.calendar.events({
         }else {
             $(event.target.parentNode).css('background-color', 'red');
             checkedDate.push(dayId);
-            console.log(checkedDate);
         }
     },
 });
@@ -81,13 +86,18 @@ function showCalendar(month, year) {
     }
 }
 
-export var getMonth = function()
+export const getMonth = function()
 {
     return currentMonth;
 };
 
-export var getYear = function()
+export const getYear = function()
 {
     return currentYear;
+};
+
+export const getSelectedDays = function()
+{
+    return checkedDate;
 };
 

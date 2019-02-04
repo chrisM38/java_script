@@ -4,8 +4,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 
 
 import { Tasks } from '../api/tasks.js';
-import {checkedDate} from '../api/dates.js';
-import {getMonth, getYear} from "./calendar";
+import {getMonth, getSelectedDays, getYear} from "./calendar";
 
 import './calendar.js';
 import './task.js';
@@ -14,13 +13,14 @@ import './body.html';
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
+    console.log(this.state);
 });
 
 Template.body.helpers({
     tasks() {
         const instance = Template.instance();
         if (instance.state.get('hideCompleted')) {
-            return Tasks.find({ checked: { $ne: true } }, { sort: { day: 1 } });
+            return Tasks.find({ checked: { $ne: true } }, { sort: { day: 1 } }).fetch();
         }
         return Tasks.find({month: getMonth(), year:getYear()}, {sort: {day: 1}}).fetch();
     },
@@ -39,8 +39,9 @@ Template.body.events({
 
         let month = getMonth();
         let year = getYear();
+        let days = getSelectedDays();
 
-        for(let day of checkedDate) {
+        for(let day of days) {
             Tasks.insert({
                 text,
                 day, month, year,
@@ -52,4 +53,9 @@ Template.body.events({
         instance.state.set('hideCompleted', event.target.checked);
     },
 });
+
+export var getTasks = function(){
+    this.state.set('refresh', true);
+    this.state.set('refresh', false);
+};
 
