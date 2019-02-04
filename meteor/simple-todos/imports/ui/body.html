@@ -9,17 +9,20 @@
         <h1>Todo List ({{incompleteCount}})</h1>
 
         <label class="hide-completed">
-            <input type="checkbox" />
+            <input type="checkbox"/>
             Hide Completed Tasks
         </label>
 
         <form class="new-task">
-            <input type="text" name="text" placeholder="Type to add new tasks" />
+            <input type="text" name="text" placeholder="Type to add new tasks"/>
         </form>
     </header>
 
     <ul>
         {{#each tasks}}
+            <span class="day">{{day}}</span>
+            <span class="month">{{month}}</span>
+            <span class="year">{{year}}</span>
             {{> task}}
         {{/each}}
     </ul>

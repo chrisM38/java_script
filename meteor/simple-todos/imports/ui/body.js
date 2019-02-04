@@ -1,11 +1,16 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { ReactiveDict } from 'meteor/reactive-dict';
 
 
 import { Tasks } from '../api/tasks.js';
+import {checkedDate} from '../api/dates.js';
+import {getMonth, getYear} from "./calendar";
 
 import './calendar.js';
 import './task.js';
 import './body.html';
+
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
@@ -15,11 +20,9 @@ Template.body.helpers({
     tasks() {
         const instance = Template.instance();
         if (instance.state.get('hideCompleted')) {
-            // If hide completed is checked, filter tasks
-            return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
+            return Tasks.find({ checked: { $ne: true } }, { sort: { day: 1 } });
         }
-        // Otherwise, return all of the tasks
-        return Tasks.find({}, { sort: { createdAt: -1 } });
+        return Tasks.find({month: getMonth(), year:getYear()}, {sort: {day: 1}}).fetch();
     },
     incompleteCount() {
         return Tasks.find({ checked: { $ne: true } }).count();
@@ -29,20 +32,20 @@ Template.body.helpers({
 
 Template.body.events({
     'submit .new-task'(event) {
-        // Prevent default browser form submit
         event.preventDefault();
 
-        // Get value from form element
         const target = event.target;
         const text = target.text.value;
 
-        // Insert a task into the collection
-        Tasks.insert({
-            text,
-            createdAt: new Date(), // current time
-        });
+        let month = getMonth();
+        let year = getYear();
 
-        // Clear form
+        for(let day of checkedDate) {
+            Tasks.insert({
+                text,
+                day, month, year,
+            });
+        }
         target.text.value = '';
     },
     'change .hide-completed input'(event, instance) {

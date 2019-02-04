@@ -3,7 +3,9 @@ import {Template} from 'meteor/templating';
 import './calendar.html';
 import './body.html';
 
-import { currentYear,currentMonth,months} from '../api/dates.js';
+import {months, checkedDate, today} from '../api/dates.js';
+var currentMonth = today.getMonth();
+var currentYear = today.getFullYear();
 
 
 Template.calendar.helpers({
@@ -19,18 +21,25 @@ Template.calendar.events({
     'click .prev'() {
         currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
         currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
+        checkedDate = [];
+        Template.instance().setYear;
         showCalendar(currentMonth, currentYear);
     },
     'click .next'() {
         currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
         currentMonth = (currentMonth + 1) % 12;
+        checkedDate = [];
         showCalendar(currentMonth, currentYear);
     },
     'change .calendarSelect'(event) {
+        let dayId = $(event.target).attr("id");
         if($(event.target).is(":checked")){
             $(event.target.parentNode).css('background-color', 'white');
+            checkedDate.splice(checkedDate.indexOf(dayId),1);
         }else {
             $(event.target.parentNode).css('background-color', 'red');
+            checkedDate.push(dayId);
+            console.log(checkedDate);
         }
     },
 });
@@ -60,6 +69,7 @@ function showCalendar(month, year) {
                 let cell = document.createElement("td");
                 let input = document.createElement("input");
                 input.setAttribute("type", "checkbox");
+                input.setAttribute("id", date);
                 input.setAttribute("class", "calendarSelect");
                 cell.appendChild(input);
                 cell.appendChild(document.createTextNode(date));
@@ -70,3 +80,14 @@ function showCalendar(month, year) {
         tbl[0].appendChild(row);
     }
 }
+
+export var getMonth = function()
+{
+    return currentMonth;
+};
+
+export var getYear = function()
+{
+    return currentYear;
+};
+
