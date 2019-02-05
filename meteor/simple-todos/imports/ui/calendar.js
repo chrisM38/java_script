@@ -4,7 +4,6 @@ import './calendar.html';
 import './body.html';
 
 import {months, checkedDate, today} from '../api/dates.js';
-import {getTasks} from "./body";
 var currentMonth = today.getMonth();
 var currentYear = today.getFullYear();
 
@@ -20,13 +19,12 @@ Template.calendar.helpers({
 });
 
 Template.calendar.events({
-    'click .prev'() {
+    'click .prev'(event, instance) {
         currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
         currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
         document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
         document.getElementsByClassName("year")[0].innerHTML = getYear();
         checkedDate = [];
-        //getTasks();
         showCalendar(currentMonth, currentYear);
     },
     'click .next'() {
@@ -35,7 +33,6 @@ Template.calendar.events({
         document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
         document.getElementsByClassName("year")[0].innerHTML = getYear();
         checkedDate = [];
-        //getTasks();
         showCalendar(currentMonth, currentYear);
     },
     'change .calendarSelect'(event) {

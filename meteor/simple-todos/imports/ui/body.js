@@ -20,7 +20,7 @@ Template.body.helpers({
     tasks() {
         const instance = Template.instance();
         if (instance.state.get('hideCompleted')) {
-            return Tasks.find({ checked: { $ne: true } }, { sort: { day: 1 } }).fetch();
+            return Tasks.find({ checked: { $ne: true }, month: getMonth(), year:getYear()}, { sort: { day: 1 } }).fetch();
         }
         return Tasks.find({month: getMonth(), year:getYear()}, {sort: {day: 1}}).fetch();
     },
@@ -41,21 +41,23 @@ Template.body.events({
         let year = getYear();
         let days = getSelectedDays();
 
+        if (days.length !== 0){
         for(let day of days) {
             Tasks.insert({
                 text,
                 day, month, year,
             });
-        }
+        }}else {throw new Meteor.Error('bad',"You have no selected days");}
+
         target.text.value = '';
     },
     'change .hide-completed input'(event, instance) {
+        console.log(event.target.checked);
         instance.state.set('hideCompleted', event.target.checked);
     },
+    'click .refresh'(event, instance){
+        instance.state.set('hideCompleted', true);
+        instance.state.set('hideCompleted', false);
+    }
 });
-
-export var getTasks = function(){
-    this.state.set('refresh', true);
-    this.state.set('refresh', false);
-};
 
