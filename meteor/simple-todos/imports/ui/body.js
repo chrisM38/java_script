@@ -20,9 +20,9 @@ Template.body.helpers({
     tasks() {
         const instance = Template.instance();
         if (instance.state.get('hideCompleted')) {
-            return Tasks.find({ checked: { $ne: true }, month: getMonth(), year:getYear()}, { sort: { day: 1 } }).fetch();
+            return Tasks.find({ checked: { $ne: true }, month: getMonth() + 1, year:getYear()}, { sort: { day: 1 } }).fetch();
         }
-        return Tasks.find({month: getMonth(), year:getYear()}, {sort: {day: 1}}).fetch();
+        return Tasks.find({month: getMonth() + 1, year:getYear()}, {sort: {day: 1}}).fetch();
     },
     incompleteCount() {
         return Tasks.find({ checked: { $ne: true } }).count();
@@ -37,7 +37,7 @@ Template.body.events({
         const target = event.target;
         const text = target.text.value;
 
-        let month = getMonth();
+        let month = getMonth() + 1;
         let year = getYear();
         let days = getSelectedDays();
 
