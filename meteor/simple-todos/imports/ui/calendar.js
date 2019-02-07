@@ -13,7 +13,6 @@ Template.calendar.helpers({
         return currentYear;
     },
     setMonth() {
-        console.log("test");
         return months[currentMonth];
     },
 });
