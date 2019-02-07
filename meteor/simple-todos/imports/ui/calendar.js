@@ -18,7 +18,7 @@ Template.calendar.helpers({
 });
 
 Template.calendar.events({
-    'click .prev'(event, instance) {
+    'click .prev'() {
         currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
         currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
         document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];

@@ -60,7 +60,6 @@ Template.body.events({
         target.text.value = '';
     },
     'change .hide-completed input'(event, instance) {
-        console.log(event.target.checked);
         instance.state.set('hideCompleted', event.target.checked);
     },
     'click .refresh'(event, instance) {
