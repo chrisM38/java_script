@@ -27,7 +27,7 @@ body {
 .calenderContainer{
   width: 25%;
   margin: 5%;
-  padding: 0% 10% 2% 2%;
+  padding: 0% 2% 2% 2%;
   height: auto ;
   position: absolute;
   background: #1abc9c;
@@ -129,11 +129,13 @@ header .hide-completed {
   }
 }
 
-table.calendar {
+table#calendar {
   border-style: solid;
   position: relative;
   margin: auto;
   background: #ddd;
+  table-layout: fixed;
+  width: 100%;
 }
 
 tr.weekdays{
@@ -162,8 +164,7 @@ tr.weekdays{
 
 /* Month header */
 .monthAndYear {
-  padding: 50px 20px 40px;
-  width: 100%;
+  padding: 10% 10% 30% 0px;
   background: #1abc9c;
   text-align: center;
   width: 110%;
@@ -199,3 +200,24 @@ input.calendarSelect {
   float: right;
 }
 
+/*input[type="radio"]{
+  display: none;
+}*/
+
+input[type="radio"]:checked:before{
+  background-color: #3acfb6;
+  border-color: white;
+}
+
+@media (max-width: 1800px) {
+
+  .weekdays th{
+    font-size:10px;
+    height: 40px;
+  }
+
+  .days tr {
+    font-size: 8px;
+    height: 30px;
+  }
+}

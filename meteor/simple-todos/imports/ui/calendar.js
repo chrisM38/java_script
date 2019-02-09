@@ -4,6 +4,7 @@ import './calendar.html';
 import './body.html';
 
 import {months, checkedDate, today} from '../api/dates.js';
+
 var currentMonth = today.getMonth();
 var currentYear = today.getFullYear();
 
@@ -36,18 +37,18 @@ Template.calendar.events({
     },
     'change .calendarSelect'(event) {
         let dayId = $(event.target).attr("id");
-        if($(event.target).is(":checked")){
-            $(event.target.parentNode).css('background-color', 'white');
-            checkedDate.splice(checkedDate.indexOf(dayId),1);
-        }else {
+        if ($(event.target).is(":checked")) {
             $(event.target.parentNode).css('background-color', 'red');
             checkedDate.push(dayId);
+        } else {
+            $(event.target.parentNode).css('background-color', '#eee');
+            checkedDate.splice(checkedDate.indexOf(dayId), 1);
         }
     },
 });
 
 Template.calendar.onRendered(function () {
-    showCalendar(currentMonth, currentYear);
+        showCalendar(currentMonth, currentYear);
 
     }
 );
@@ -58,15 +59,17 @@ function showCalendar(month, year) {
     let tbl = document.getElementsByClassName("days");
     tbl[0].innerHTML = "";
     let date = 1;
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
         let row = document.createElement("tr");
         for (let j = 0; j < 7; j++) {
-            if (i === 0 && j < firstDay -1) {
+            if (i === 0 && j < firstDay - 1) {
                 let cell = document.createElement("td");
                 cell.appendChild(document.createTextNode(""));
                 row.appendChild(cell);
             } else if (date > daysInMonth) {
-                break;
+                let cell = document.createElement("td");
+                cell.appendChild(document.createTextNode(""));
+                row.appendChild(cell);
             } else {
                 let cell = document.createElement("td");
                 let input = document.createElement("input");
@@ -83,18 +86,15 @@ function showCalendar(month, year) {
     }
 }
 
-export const getMonth = function()
-{
+export const getMonth = function () {
     return currentMonth;
 };
 
-export const getYear = function()
-{
+export const getYear = function () {
     return currentYear;
 };
 
-export const getSelectedDays = function()
-{
+export const getSelectedDays = function () {
     return checkedDate;
 };
 
