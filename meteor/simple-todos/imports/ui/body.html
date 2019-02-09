@@ -8,7 +8,7 @@
     <header>
         <h1>Todo List ({{incompleteCount}})</h1>
 
-        <button class="refresh">refresh</button>
+        <button id="refresh" class="btn btn-primary">refresh</button>
 
         <label class="hide-completed">
             <input type="checkbox"/>
@@ -18,10 +18,16 @@
         <button class="delete-completed">Delete Completed Tasks</button>
 
         <form class="new-task">
+            <label class="btn btn-secondary">
+                <input type="radio" name="priority" value="red"/>High
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="priority" value="yellow"/>Medium
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="priority" value="green"/>Low
+            </label>
             <input type="text" name="text" placeholder="Type to add new tasks"/>
-            <input type="radio" name="priority" value="red"/>High
-            <input type="radio" name="priority" value="yellow"/>Medium
-            <input type="radio" name="priority" value="green"/>Low
         </form>
     </header>
 

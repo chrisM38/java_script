@@ -62,7 +62,7 @@ Template.body.events({
     'change .hide-completed input'(event, instance) {
         instance.state.set('hideCompleted', event.target.checked);
     },
-    'click .refresh'(event, instance) {
+    'click #refresh'(event, instance) {
         if (instance.state.get('hideCompleted')) {
             instance.state.set('hideCompleted', false);
             instance.state.set('hideCompleted', true);
