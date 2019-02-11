@@ -32,33 +32,9 @@ Template.body.helpers({
 
 Template.body.events({
     'submit .new-task'(event) {
-        event.preventDefault();
-
-        const target = event.target;
-        const priority = target.priority.value;
-        const text = target.text.value;
-
-        let month = getMonth() + 1;
-        let year = getYear();
-        let days = getSelectedDays();
-
-        if(priority !== ""){
-            if (days.length !== 0) {
-                for (let day of days) {
-                    Tasks.insert({
-                        text,
-                        day, month, year, priority
-                    });
-                }
-            } else {
-                alert("You have no selected days");
-            }
-        } else {
-            alert("You have no selected priority");
-        }
-
-        target.text.value = '';
+        newTasks(event);
     },
+
     'change .hide-completed input'(event, instance) {
         instance.state.set('hideCompleted', event.target.checked);
     },
@@ -72,4 +48,37 @@ Template.body.events({
         }
     }
 });
+
+
+function newTasks(event) {
+    event.preventDefault();
+
+    const target = event.target;
+
+    const priority = target.priority.value;
+    const text = target.text.value;
+
+    let month = getMonth() + 1;
+    let year = getYear();
+    let days = getSelectedDays();
+
+    if(priority !== ""){
+        if (days.length !== 0) {
+            for (let day of days) {
+                Tasks.insert({
+                    text,
+                    day, month, year, priority
+                });
+            }
+        } else {
+            alert("You have no selected days");
+        }
+    } else {
+        alert("You have no selected priority");
+    }
+    target.text.value = '';
+}
+
+
+
 

@@ -53,7 +53,7 @@ Template.calendar.onRendered(function () {
     }
 );
 
-function showCalendar(month, year) {
+function buildCalendar(month, year) {
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
     let tbl = document.getElementsByClassName("days");
@@ -84,6 +84,11 @@ function showCalendar(month, year) {
         }
         tbl[0].appendChild(row);
     }
+}
+
+
+function showCalendar() {
+    buildCalendar(currentMonth, currentYear)
 }
 
 export const getMonth = function () {
