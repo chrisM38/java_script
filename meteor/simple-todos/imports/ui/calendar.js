@@ -25,7 +25,7 @@ Template.calendar.events({
         document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
         document.getElementsByClassName("year")[0].innerHTML = getYear();
         checkedDate = [];
-        showCalendar(currentMonth, currentYear);
+        buildCalendar(currentMonth, currentYear);
     },
     'click .next'() {
         currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
@@ -33,7 +33,7 @@ Template.calendar.events({
         document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
         document.getElementsByClassName("year")[0].innerHTML = getYear();
         checkedDate = [];
-        showCalendar(currentMonth, currentYear);
+        buildCalendar(currentMonth, currentYear);
     },
     'change .calendarSelect'(event) {
         let dayId = $(event.target).attr("id");
@@ -48,8 +48,7 @@ Template.calendar.events({
 });
 
 Template.calendar.onRendered(function () {
-        showCalendar(currentMonth, currentYear);
-
+        buildCalendar(currentMonth, currentYear);
     }
 );
 
@@ -84,11 +83,6 @@ function buildCalendar(month, year) {
         }
         tbl[0].appendChild(row);
     }
-}
-
-
-function showCalendar() {
-    buildCalendar(currentMonth, currentYear)
 }
 
 export const getMonth = function () {

@@ -10,8 +10,6 @@ import './calendar.js';
 import './task.js';
 import './body.html';
 
-const defaultPriority = "Low";
-
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
 });
@@ -32,26 +30,27 @@ Template.body.helpers({
 
 Template.body.events({
     'submit .new-task'(event) {
-<<<<<<< Updated upstream
-        newTasks(event);
-=======
         event.preventDefault();
 
         const target = event.target;
+
+        const priority = target.priority.value;
         const text = target.text.value;
 
-        let month = getMonth();
+        let month = getMonth() + 1;
         let year = getYear();
         let days = getSelectedDays();
 
-        for(let day of days) {
+        Meteor.call('check',priority !== "", "You have no selected priority");
+        Meteor.call('check',days.length !== 0, "You have no selected days");
+
+        for (let day of days) {
             Tasks.insert({
                 text,
-                day, month, year, //add priority
-            });
+                day, month, year, priority
+            })
         }
         target.text.value = '';
->>>>>>> Stashed changes
     },
 
     'change .hide-completed input'(event, instance) {
@@ -68,36 +67,12 @@ Template.body.events({
     }
 });
 
-
-function newTasks(event) {
-    event.preventDefault();
-
-    const target = event.target;
-
-    const priority = target.priority.value;
-    const text = target.text.value;
-
-    let month = getMonth() + 1;
-    let year = getYear();
-    let days = getSelectedDays();
-
-    if(priority !== ""){
-        if (days.length !== 0) {
-            for (let day of days) {
-                Tasks.insert({
-                    text,
-                    day, month, year, priority
-                });
-            }
-        } else {
-            alert("You have no selected days");
+Meteor.methods({
+    'check'(toCheck, msg){
+        if (!toCheck){
+            alert(msg);
         }
-    } else {
-        alert("You have no selected priority");
     }
-    target.text.value = '';
-}
-
-
+});
 
 

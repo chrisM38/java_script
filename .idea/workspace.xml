@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70ce56b7-ee0b-403b-8081-d396f3f771f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/meteor/simple-todos/client/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/meteor/simple-todos/client/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meteor/simple-todos/client/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/meteor/simple-todos/client/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.js" beforeDir="false" afterPath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,47 +21,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="285">
+              <caret line="20" column="50" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="50" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meteor/simple-todos/client/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="154" column="18" selection-start-line="154" selection-start-column="14" selection-end-line="154" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="44" column="62" lean-forward="true" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+            <state relative-caret-position="624">
+              <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -71,10 +52,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/api/dates.js">
+        <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -100,13 +93,13 @@
         <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.html" />
         <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/todoList.html" />
         <option value="$PROJECT_DIR$/meteor/simple-todos/imports/api/dates.js" />
-        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.js" />
-        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.js" />
         <option value="$PROJECT_DIR$/meteor/simple-todos/client/main.js" />
-        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.html" />
         <option value="$PROJECT_DIR$/meteor/simple-todos/client/main.css" />
-        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.js" />
         <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.html" />
+        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.js" />
+        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.html" />
+        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.js" />
+        <option value="$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.js" />
       </list>
     </option>
   </component>
@@ -122,6 +115,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -170,52 +164,10 @@
               <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="java_script" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_script" type="462c0819:PsiDirectoryNode" />
-              <item name="meteor" type="462c0819:PsiDirectoryNode" />
-              <item name="simple-todos" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_script" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_script" type="462c0819:PsiDirectoryNode" />
-              <item name="meteor" type="462c0819:PsiDirectoryNode" />
-              <item name="simple-todos" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_script" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_script" type="462c0819:PsiDirectoryNode" />
-              <item name="meteor" type="462c0819:PsiDirectoryNode" />
-              <item name="simple-todos" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="java_script" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_script" type="462c0819:PsiDirectoryNode" />
-              <item name="meteor" type="462c0819:PsiDirectoryNode" />
-              <item name="simple-todos" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="jquery.slim.js" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="java_script" type="b2602c69:ProjectViewProjectNode" />
-              <item name="java_script" type="462c0819:PsiDirectoryNode" />
-              <item name="meteor" type="462c0819:PsiDirectoryNode" />
-              <item name="simple-todos" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,11 +215,12 @@
       <workItem from="1548687135404" duration="6495000" />
       <workItem from="1548937892055" duration="2296000" />
       <workItem from="1549269716016" duration="20784000" />
+      <workItem from="1549897328877" duration="3088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71859000" />
+    <option name="totallyTimeSpent" value="74947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -280,6 +233,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-2" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19820769" />
@@ -379,13 +333,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/todoList.html" />
     <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/todoList.js" />
-    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/api/tasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/Meteor/lib/Meteor.jar!/tsMeteorStubs/meteor-v1.3.1.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -407,16 +354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="63" column="6" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meteor/simple-todos/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -434,34 +371,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/api/dates.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -472,26 +385,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/client/main.css">
+    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/api/dates.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="154" column="18" selection-start-line="154" selection-start-column="14" selection-end-line="154" selection-end-column="18" />
+        <state relative-caret-position="30">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.html">
+    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/api/tasks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="30">
+          <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/client/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="136" column="2" lean-forward="true" selection-start-line="136" selection-start-column="2" selection-end-line="136" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="44" column="62" lean-forward="true" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+        <state relative-caret-position="624">
+          <caret line="81" column="13" lean-forward="true" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meteor/simple-todos/imports/ui/body.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
