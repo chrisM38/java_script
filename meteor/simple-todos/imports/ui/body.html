@@ -8,14 +8,25 @@
     <header>
         <h1>Todo List ({{incompleteCount}})</h1>
 
-        <button id="refresh" class="">refresh</button>
+        <div class="btn-group" role="group" >
+            <button id="refresh" class="">Refresh</button>
+            <button class="delete-completed">Delete Completed Tasks</button>
+            <label class="btn btn-secondary active">
+                <input type="checkbox" checked autocomplete="off"/>
+                Hide Completed Tasks
+            </label>
 
-        <label class="hide-completed">
-            <input type="checkbox"/>
-            Hide Completed Tasks
+        </div>
+
+
+
+       <!-- label class="hide-completed">
+          <input type="checkbox"/>
+         Hide Completed Tasks
         </label>
+        -->
 
-        <button class="delete-completed">Delete Completed Tasks</button>
+
 
         <form class="new-task">
             <label class="btn btn-outline-danger">
