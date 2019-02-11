@@ -32,7 +32,26 @@ Template.body.helpers({
 
 Template.body.events({
     'submit .new-task'(event) {
+<<<<<<< Updated upstream
         newTasks(event);
+=======
+        event.preventDefault();
+
+        const target = event.target;
+        const text = target.text.value;
+
+        let month = getMonth();
+        let year = getYear();
+        let days = getSelectedDays();
+
+        for(let day of days) {
+            Tasks.insert({
+                text,
+                day, month, year, //add priority
+            });
+        }
+        target.text.value = '';
+>>>>>>> Stashed changes
     },
 
     'change .hide-completed input'(event, instance) {
