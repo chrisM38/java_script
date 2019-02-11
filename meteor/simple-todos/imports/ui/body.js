@@ -33,7 +33,6 @@ Template.body.events({
         event.preventDefault();
 
         const target = event.target;
-
         const priority = target.priority.value;
         const text = target.text.value;
 
@@ -41,14 +40,8 @@ Template.body.events({
         let year = getYear();
         let days = getSelectedDays();
 
-        Meteor.call('check',priority !== "", "You have no selected priority");
-        Meteor.call('check',days.length !== 0, "You have no selected days");
-
-        for (let day of days) {
-            Tasks.insert({
-                text,
-                day, month, year, priority
-            })
+        for (let day of days){
+            Meteor.call('task.insert',text,priority,day,month,year);
         }
         target.text.value = '';
     },
@@ -64,15 +57,11 @@ Template.body.events({
             instance.state.set('hideCompleted', true);
             instance.state.set('hideCompleted', false);
         }
+    },
+
+    'click .delete-completed' () {
+        for(let task of Tasks.find({checked : {$ne: false}, month: getMonth() + 1, year: getYear()}))
+        Tasks.remove(task._id);
     }
+
 });
-
-Meteor.methods({
-    'check'(toCheck, msg){
-        if (!toCheck){
-            alert(msg);
-        }
-    }
-});
-
-
