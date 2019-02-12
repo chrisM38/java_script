@@ -25,7 +25,12 @@ Template.body.helpers({
     incompleteCount() {
         return Tasks.find({checked: {$ne: true}}).count();
     },
-
+    active(){
+        const instance = Template.instance();
+        if (instance.state.get('hideCompleted')) {
+            return "active";
+        }else{return "";}
+    },
 });
 
 Template.body.events({
@@ -46,8 +51,12 @@ Template.body.events({
         target.text.value = '';
     },
 
-    'change .hide-completed input'(event, instance) {
-        instance.state.set('hideCompleted', event.target.checked);
+    'click #hide-completed'(event, instance) {
+        if (instance.state.get('hideCompleted')) {
+            instance.state.set('hideCompleted', false);
+        } else {
+            instance.state.set('hideCompleted', true);
+        }
     },
     'click #refresh'(event, instance) {
         if (instance.state.get('hideCompleted')) {
@@ -59,9 +68,10 @@ Template.body.events({
         }
     },
 
-    'click .delete-completed' () {
-        for(let task of Tasks.find({checked : {$ne: false}, month: getMonth() + 1, year: getYear()}))
-        Tasks.remove(task._id);
-    }
+    'click #delete-completed' () {
 
+        for(let task of Tasks.find({checked: {$ne: false}, month: getMonth() + 1, year: getYear()})){
+            Tasks.remove(task._id);
+        }
+    },
 });

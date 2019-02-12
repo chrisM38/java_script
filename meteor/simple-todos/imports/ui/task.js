@@ -1,14 +1,19 @@
 import { Template } from 'meteor/templating';
-
+import {ReactiveDict} from "meteor/reactive-dict";
 import { Tasks } from '../api/tasks.js';
 
 import './task.html';
 
+Template.task.onCreated(function bodyOnCreated() {
+    this.noReadonly = new ReactiveDict();
+});
+
 Template.task.helpers({
     readonly(){
-        return {
-            readonly: false
-        };
+        const instance = Template.instance();
+        if (!instance.noReadonly.get('readonly')) {
+            return "readonly";
+        }else{return "";}
     }
 });
 
@@ -23,10 +28,10 @@ Template.task.events({
     'click .delete'() {
         Tasks.remove(this._id);
     },
-    'click .edit'() {
-        document.getElementsByClassName("text")[0];
+    'click .edit'(event,instance) {
+        instance.noReadonly.set('readonly', true);
     },
-    'submit .text'(event) {
+    'submit .text'(event, instance) {
         event.preventDefault();
 
         const target = event.target;
@@ -36,7 +41,6 @@ Template.task.events({
         Tasks.update(this._id, {
             $set: {text: text}
         });
-
-        target.text.value = '';
+        instance.noReadonly.set('readonly', false);
     }
 });

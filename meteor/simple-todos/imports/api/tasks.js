@@ -11,7 +11,7 @@ Meteor.methods({
 
         Tasks.insert({
             text,
-            day, month, year, priority
+            day, month, year, priority, checked : false,
         })
     },
     'check'(toCheck, msg){
