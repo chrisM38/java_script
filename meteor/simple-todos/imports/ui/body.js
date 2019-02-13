@@ -74,4 +74,22 @@ Template.body.events({
             Tasks.remove(task._id);
         }
     },
+
+    'click #check-all' () {
+
+        for(let task of Tasks.find({checked: {$ne: true}, month: getMonth() + 1, year: getYear()})){
+            Tasks.update(task._id, {
+                $set: { checked: ! task.checked }
+            });
+        }
+    },
+
+    'click #uncheck-all' () {
+
+        for(let task of Tasks.find({checked: {$ne: false}, month: getMonth() + 1, year: getYear()})){
+            Tasks.update(task._id, {
+                $set: { checked: ! task.checked }
+            });
+        }
+    }
 });
