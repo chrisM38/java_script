@@ -10,8 +10,7 @@ Meteor.methods({
         Meteor.call('check', day.length !== 0, "You have no selected days");
 
         Tasks.insert({
-            text,
-            day, month, year, priority, checked : false,
+            text, day, month, year, priority, checked : false,
         })
     },
     'check'(toCheck, msg){

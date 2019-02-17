@@ -3,6 +3,8 @@ import {ReactiveDict} from "meteor/reactive-dict";
 import { Tasks } from '../api/tasks.js';
 
 import './task.html';
+import {months} from "../api/dates";
+import {getMonth} from "./calendar";
 
 Template.task.onCreated(function bodyOnCreated() {
     this.noReadonly = new ReactiveDict();
@@ -30,17 +32,19 @@ Template.task.events({
     },
     'click .edit'(event,instance) {
         instance.noReadonly.set('readonly', true);
+
     },
-    'submit .text'(event, instance) {
+    'submit .textForm'(event, instance) {
         event.preventDefault();
 
         const target = event.target;
         const text = target.text.value;
-        console.log(text);
 
         Tasks.update(this._id, {
             $set: {text: text}
         });
+
         instance.noReadonly.set('readonly', false);
+        alert("Your element has been changed");
     }
 });
