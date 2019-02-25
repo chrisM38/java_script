@@ -45,9 +45,12 @@ Template.body.events({
         let year = getYear();
         let days = getSelectedDays();
 
-        for (let day of days){
-            Meteor.call('task.insert',text,priority,day,month,year);
-        }
+        Meteor.call('task.insert',text,priority,days,month,year, function(error){
+            if (error && error.error === "wrong-argument") {
+                alert(error);
+            }
+        });
+
         target.text.value = '';
     },
 

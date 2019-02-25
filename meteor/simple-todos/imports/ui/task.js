@@ -1,10 +1,8 @@
 import { Template } from 'meteor/templating';
 import {ReactiveDict} from "meteor/reactive-dict";
-import { Tasks } from '../api/tasks.js';
 
 import './task.html';
-import {months} from "../api/dates";
-import {getMonth} from "./calendar";
+import {Meteor} from "meteor/meteor";
 
 Template.task.onCreated(function bodyOnCreated() {
     this.noReadonly = new ReactiveDict();
@@ -22,13 +20,10 @@ Template.task.helpers({
 
 Template.task.events({
     'click .toggle-checked'() {
-        // Set the checked property to the opposite of its current value
-        Tasks.update(this._id, {
-            $set: { checked: ! this.checked }
-        });
+        Meteor.call('task.update.checked',this._id,! this.checked);
     },
     'click .delete'() {
-        Tasks.remove(this._id);
+        Meteor.call('task.remove',this._id);
     },
     'click .edit'(event,instance) {
         instance.noReadonly.set('readonly', true);
@@ -40,9 +35,7 @@ Template.task.events({
         const target = event.target;
         const text = target.text.value;
 
-        Tasks.update(this._id, {
-            $set: {text: text}
-        });
+        Meteor.call('task.update.text',this._id,text);
 
         instance.noReadonly.set('readonly', false);
         alert("Your element has been changed");
