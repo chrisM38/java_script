@@ -45,20 +45,12 @@ Template.body.events({
         let year = getYear();
         let days = getSelectedDays();
 
-<<<<<<< Updated upstream
         Meteor.call('task.insert',text,priority,days,month,year, function(error){
             if (error && error.error === "wrong-argument") {
                 alert(error);
             }
         });
 
-=======
-        Meteor.call('check', days.length !== 0, "You have no selected days");
-
-        for (let day of days){
-            Meteor.call('task.insert',text,priority,day,month,year);
-        }
->>>>>>> Stashed changes
         target.text.value = '';
     },
 

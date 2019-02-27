@@ -7,11 +7,7 @@ Meteor.methods({
     'task.insert'(text, priority, days, month, year) {
 
         Meteor.call('check', priority !== "", "You have no selected priority");
-<<<<<<< Updated upstream
         Meteor.call('check', days.length !== 0, "You have no selected days");
-=======
-
->>>>>>> Stashed changes
 
         for (let day of days) {
             Tasks.insert({
