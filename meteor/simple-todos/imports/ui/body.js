@@ -48,10 +48,10 @@ Template.body.events({
         Meteor.call('task.insert',text,priority,days,month,year, function(error){
             if (error && error.error === "wrong-argument") {
                 alert(error);
+            }else {
+                target.text.value = '';
             }
         });
-
-        target.text.value = '';
     },
 
     'click #hide-completed'(event, instance) {
