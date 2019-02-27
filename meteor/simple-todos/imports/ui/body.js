@@ -52,10 +52,6 @@ Template.body.events({
                 target.text.value = '';
             }
         });
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     },
 
     'click #hide-completed'(event, instance) {
