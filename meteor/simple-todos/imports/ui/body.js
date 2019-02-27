@@ -52,6 +52,13 @@ Template.body.events({
                 target.text.value = '';
             }
         });
+
+
+            Meteor.call('check', days.length !== 0, "You have no selected days");
+
+
+
+        target.text.value = '';
     },
 
     'click #hide-completed'(event, instance) {
