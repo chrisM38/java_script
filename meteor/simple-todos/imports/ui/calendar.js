@@ -22,16 +22,16 @@ Template.calendar.events({
     'click .prev'() {
         currentYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
         currentMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-        document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
-        document.getElementsByClassName("year")[0].innerHTML = getYear();
+        document.querySelector(".month").innerHTML = months[getMonth()];
+        document.querySelector(".year").innerHTML = getYear();
         checkedDate = [];
         buildCalendar(currentMonth, currentYear);
     },
     'click .next'() {
         currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;
         currentMonth = (currentMonth + 1) % 12;
-        document.getElementsByClassName("month")[0].innerHTML = months[getMonth()];
-        document.getElementsByClassName("year")[0].innerHTML = getYear();
+        document.querySelector(".month").innerHTML = months[getMonth()];
+        document.querySelector(".year").innerHTML = getYear();
         checkedDate = [];
         buildCalendar(currentMonth, currentYear);
     },
@@ -55,8 +55,8 @@ Template.calendar.onRendered(function () {
 function buildCalendar(month, year) {
     let firstDay = (new Date(year, month)).getDay();
     let daysInMonth = 32 - new Date(year, month, 32).getDate();
-    let tbl = document.getElementsByClassName("days");
-    tbl[0].innerHTML = "";
+    let tbl = document.querySelector(".days");
+    tbl.innerHTML = "";
     let date = 1;
     for (let i = 0; i < 5; i++) {
         let row = document.createElement("tr");
@@ -81,7 +81,7 @@ function buildCalendar(month, year) {
                 date++;
             }
         }
-        tbl[0].appendChild(row);
+        tbl.appendChild(row);
     }
 }
 

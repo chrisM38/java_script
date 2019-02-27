@@ -18,12 +18,12 @@ Template.body.helpers({
     tasks() {
         const instance = Template.instance();
         if (instance.state.get('hideCompleted')) {
-            return Tasks.find({checked: {$ne: true}, month: getMonth() + 1, year: getYear()}, {sort: {day: 1}}).fetch();
+            return Tasks.find({checked: {$eq: false}, month: getMonth() + 1, year: getYear()}, {sort: {day: 1}}).fetch();
         }
         return Tasks.find({month: getMonth() + 1, year: getYear()}, {sort: {day: 1}}).fetch();
     },
     incompleteCount() {
-        return Tasks.find({checked: {$ne: true}}).count();
+        return Tasks.find({checked: {$eq: false}}).count();
     },
     active(){
         const instance = Template.instance();
@@ -73,14 +73,14 @@ Template.body.events({
 
     'click #delete-completed' () {
 
-        for(let task of Tasks.find({checked: {$ne: false}, month: getMonth() + 1, year: getYear()})){
+        for(let task of Tasks.find({checked: {$eq: true}, month: getMonth() + 1, year: getYear()})){
             Tasks.remove(task._id);
         }
     },
 
     'click #check-all' () {
 
-        for(let task of Tasks.find({checked: {$ne: true}, month: getMonth() + 1, year: getYear()})){
+        for(let task of Tasks.find({checked: {$eq: false}, month: getMonth() + 1, year: getYear()})){
             Tasks.update(task._id, {
                 $set: { checked: ! task.checked }
             });
@@ -89,7 +89,7 @@ Template.body.events({
 
     'click #uncheck-all' () {
 
-        for(let task of Tasks.find({checked: {$ne: false}, month: getMonth() + 1, year: getYear()})){
+        for(let task of Tasks.find({checked: {$eq: true}, month: getMonth() + 1, year: getYear()})){
             Tasks.update(task._id, {
                 $set: { checked: ! task.checked }
             });
